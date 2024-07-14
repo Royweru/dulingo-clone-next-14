@@ -28,7 +28,7 @@ const MarketingPage = () => {
         >
           Learn,practice and master languages with lingo
         </h1>
-        <div className=" space-y-4">
+        <div className=" space-y-4 flex flex-col w-full items-center max-w-[330px]">
           <ClerkLoading>
             <Loader className=" w-5 h-5 animate-spin text-muted-foreground" />
           </ClerkLoading>
