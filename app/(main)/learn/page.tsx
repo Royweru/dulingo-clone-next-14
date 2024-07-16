@@ -20,7 +20,7 @@ const LearnPage = async () => {
       </FeedWrapper>
       <StickyWrapper>
         <UserProgress
-          activeCourse={{ title: "Cameroon", imageSrc: "/cm.svg" }}
+          activeCourse={userProgress.activeCourse}
           hearts={5}
           points={100}
           hasActiveSubscription={false}
