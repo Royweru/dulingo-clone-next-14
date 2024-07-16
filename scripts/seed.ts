@@ -12,10 +12,10 @@ const main = async () => {
   try {
     console.log("Seeding DB");
 
-    await db.delete(schema.Courses);
+    await db.delete(schema.courses);
     await db.delete(schema.userProgress);
 
-    await db.insert(schema.Courses).values([
+    await db.insert(schema.courses).values([
       {
         title: "English",
         imageSrc: "/ENG.svg",

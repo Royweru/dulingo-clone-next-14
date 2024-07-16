@@ -1,0 +1,6 @@
+to seed 
+ 
+
+ #first download
+
+ as a dependency tsx

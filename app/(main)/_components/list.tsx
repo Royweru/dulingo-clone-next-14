@@ -1,11 +1,11 @@
 "use client";
-import { Courses, userProgress } from "@/db/schema";
+import { courses, userProgress } from "@/db/schema";
 import React, { useTransition } from "react";
 import { Card } from "./card";
 import { useRouter } from "next/navigation";
 import { upsertUserProgress } from "@/actions/user-progress";
 interface ListProps {
-  courses: (typeof Courses.$inferSelect)[];
+  courses: (typeof courses.$inferSelect)[];
   activeCourseId?: typeof userProgress.$inferSelect.activeCourseId;
 }
 
