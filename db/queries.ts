@@ -139,6 +139,7 @@ export const getLesson = cache(async (id?: number) => {
   const lessonId = id || courseProgress?.activeLessonId;
 
   if (!lessonId) return null;
+
   const data = await db.query.lessons.findFirst({
     where: eq(lessons.id, lessonId),
     with: {
@@ -156,6 +157,8 @@ export const getLesson = cache(async (id?: number) => {
 
   if (!data || !data.challenges) return null;
 
+  console.log("Fetched data:", JSON.stringify(data, null, 2));
+
   const normalizedChallenges = data.challenges.map((challenge) => {
     const completed =
       challenge.challenge_progresses &&
@@ -163,6 +166,11 @@ export const getLesson = cache(async (id?: number) => {
 
     return { ...challenge, completed };
   });
+
+  console.log(
+    "Normalized Challenges:",
+    JSON.stringify(normalizedChallenges, null, 2)
+  );
 
   return { ...data, challenges: normalizedChallenges };
 });

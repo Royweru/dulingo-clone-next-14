@@ -28,7 +28,7 @@ export const ExitModal = () => {
     <Dialog open={isOpen} onOpenChange={close}>
       <DialogContent>
         <DialogHeader>
-          <div>
+          <div className=" flex items-center w-full justify-center mb-5">
             <Image
               src={"/mascot_sad.jpg"}
               alt="Masscot"

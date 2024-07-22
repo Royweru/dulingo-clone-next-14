@@ -11,7 +11,7 @@ interface QuizProps {
   initialLessonId: number;
   initialLessonChallenges: (typeof challenges.$inferSelect & {
     completed: boolean;
-    challlengeOptions?: (typeof challengeOptions.$inferSelect)[];
+    challenge_options?: (typeof challengeOptions.$inferSelect)[];
   })[];
   userSubscription: any;
 }
@@ -32,7 +32,8 @@ export const Quiz = ({
     return uncompletedIndex === -1 ? 0 : uncompletedIndex;
   });
   const challenge = challenges[activeIndex];
-  const options = challenge?.challlengeOptions ?? [];
+  const options = challenge?.challenge_options ?? [];
+
   const title =
     challenge.type === "ASSIST"
       ? "Select the correct meaning"
@@ -44,11 +45,11 @@ export const Quiz = ({
         percentage={percentage}
         hasActiveSubscription={!!userSubscription?.isActive}
       />
-      <div className=" flex flex-1">
+      <div className=" flex-1">
         <div className=" h-full flex items-center justify-center">
           <div
             className=" lg:min-h-[350px] lg:w-[600px] w-full px-6 lg:px-0 flex
-             flex-col gap-y-12 lg:mx-auto
+             flex-col gap-y-12 
             "
           >
             <h1 className=" text-lg lg:text-3xl text-center lg:text-start font-bold text-neutral-700">

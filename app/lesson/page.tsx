@@ -10,6 +10,7 @@ const LessonPage = async () => {
     lessonData,
     userProgressData,
   ]);
+  console.log(JSON.stringify(lesson));
 
   if (!lesson || !userProgress) redirect("/learn");
 
