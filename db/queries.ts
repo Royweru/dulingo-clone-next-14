@@ -157,8 +157,6 @@ export const getLesson = cache(async (id?: number) => {
 
   if (!data || !data.challenges) return null;
 
-  console.log("Fetched data:", JSON.stringify(data, null, 2));
-
   const normalizedChallenges = data.challenges.map((challenge) => {
     const completed =
       challenge.challenge_progresses &&
@@ -166,11 +164,6 @@ export const getLesson = cache(async (id?: number) => {
 
     return { ...challenge, completed };
   });
-
-  console.log(
-    "Normalized Challenges:",
-    JSON.stringify(normalizedChallenges, null, 2)
-  );
 
   return { ...data, challenges: normalizedChallenges };
 });

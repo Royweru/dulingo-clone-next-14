@@ -1,6 +1,7 @@
 import { challengeOptions, challenges } from "@/db/schema";
 import { cn } from "@/lib/utils";
 import React from "react";
+import { Card } from "./card";
 
 interface ChallengeProps {
   options: (typeof challengeOptions.$inferSelect)[];
@@ -27,8 +28,20 @@ export const Challenge = ({
           " grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(0,1fr))]"
       )}
     >
-      {options.map((option, index) => (
-        <div key={index}>{JSON.stringify(option)}</div>
+      {options.map((option: any, i) => (
+        <Card
+          key={option.id}
+          id={option.id}
+          text={option.text}
+          imageSrc={option.imageSrc}
+          shortcut={`${i + 1}`}
+          selected={true || selectedOption === option.id}
+          onClick={() => onSelect(option.id)}
+          status={status}
+          audioSrc={option.audioSrc}
+          disabled={disabled}
+          type={type}
+        />
       ))}
     </div>
   );
