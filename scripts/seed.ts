@@ -99,11 +99,24 @@ const main = async () => {
         question: "which one is 'the man?' ",
         order: 1,
       },
+      {
+        id: 2,
+        lessonId: 1,
+        type: "ASSIST",
+        question: "the man ",
+        order: 2,
+      },
+      {
+        id: 3,
+        lessonId: 1,
+        type: "SELECT",
+        question: "which one is 'the robot?' ",
+        order: 3,
+      },
     ]);
 
     await db.insert(schema.challengeOptions).values([
       {
-        id: 1,
         challengeId: 1,
         imageSrc: "/man.png",
         correct: true,
@@ -111,7 +124,6 @@ const main = async () => {
         audioSrc: "/es_man.wav",
       },
       {
-        id: 2,
         challengeId: 1,
         imageSrc: "/woman.png",
         correct: false,
@@ -119,10 +131,52 @@ const main = async () => {
         audioSrc: "/es_woman.wav",
       },
       {
-        id: 3,
         challengeId: 1,
         imageSrc: "/robot.png",
         correct: false,
+        text: "the robot",
+        audioSrc: "/es_robot.wav",
+      },
+    ]);
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 2,
+        correct: true,
+        text: "the man",
+        audioSrc: "/es_man.wav",
+      },
+      {
+        challengeId: 2,
+        correct: false,
+        text: "the woman",
+        audioSrc: "/es_woman.wav",
+      },
+      {
+        challengeId: 2,
+        correct: false,
+        text: "the robot",
+        audioSrc: "/es_robot.wav",
+      },
+    ]);
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 3,
+        imageSrc: "/man.png",
+        correct: false,
+        text: "the man",
+        audioSrc: "/es_man.wav",
+      },
+      {
+        challengeId: 3,
+        imageSrc: "/woman.png",
+        correct: false,
+        text: "the woman",
+        audioSrc: "/es_woman.wav",
+      },
+      {
+        challengeId: 3,
+        imageSrc: "/robot.png",
+        correct: true,
         text: "the robot",
         audioSrc: "/es_robot.wav",
       },
