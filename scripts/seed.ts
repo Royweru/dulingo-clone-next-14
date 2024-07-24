@@ -108,7 +108,7 @@ const main = async () => {
         imageSrc: "/man.png",
         correct: true,
         text: "the man",
-        audioSrc: "/es_man.mp3",
+        audioSrc: "/es_man.wav",
       },
       {
         id: 2,
@@ -116,7 +116,7 @@ const main = async () => {
         imageSrc: "/woman.png",
         correct: false,
         text: "the woman",
-        audioSrc: "/es_woman.mp3",
+        audioSrc: "/es_woman.wav",
       },
       {
         id: 3,
@@ -124,7 +124,7 @@ const main = async () => {
         imageSrc: "/robot.png",
         correct: false,
         text: "the robot",
-        audioSrc: "/es_robot.mp3",
+        audioSrc: "/es_robot.wav",
       },
     ]);
     console.log("Seeding finished");
