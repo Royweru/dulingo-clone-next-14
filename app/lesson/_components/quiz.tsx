@@ -120,7 +120,7 @@ export const Quiz = ({
     setSelectedOption(id);
   };
 
-  if (!challenge) {
+  if (true || !challenge) {
     return (
       <>
         {finishAudio}
