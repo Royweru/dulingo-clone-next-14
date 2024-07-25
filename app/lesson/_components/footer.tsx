@@ -1,4 +1,4 @@
-import React, { VoidFunctionComponent } from "react";
+import React from "react";
 import { useKey, useMedia } from "react-use";
 import { CheckCircle, XCircle } from "lucide-react";
 
