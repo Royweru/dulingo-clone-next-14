@@ -77,18 +77,6 @@ const main = async () => {
         order: 3,
         title: "prural",
       },
-      {
-        id: 4,
-        unitId: 1,
-        order: 4,
-        title: "Adjectives",
-      },
-      {
-        id: 5,
-        unitId: 1,
-        order: 5,
-        title: "Vocabulary",
-      },
     ]);
 
     await db.insert(schema.challenges).values([
@@ -179,6 +167,30 @@ const main = async () => {
         correct: true,
         text: "the robot",
         audioSrc: "/es_robot.wav",
+      },
+    ]);
+
+    await db.insert(schema.challenges).values([
+      {
+        id: 4,
+        lessonId: 2,
+        type: "SELECT",
+        question: "which one is 'the man?' ",
+        order: 4,
+      },
+      {
+        id: 5,
+        lessonId: 2,
+        type: "ASSIST",
+        question: "the man ",
+        order: 5,
+      },
+      {
+        id: 6,
+        lessonId: 2,
+        type: "SELECT",
+        question: "which one is 'the robot?' ",
+        order: 6,
       },
     ]);
     console.log("Seeding finished");

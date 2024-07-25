@@ -55,7 +55,7 @@ export const upsertUserProgress = async (courseId: number) => {
 export const reduceHearts = async (challengeId: number) => {
   const { userId } = await auth();
 
-  if (!userId) throw new Error("Unauhtorized");
+  if (!userId) throw new Error("Unauthorized");
 
   const currentUserProgress = await getUserProgress();
 

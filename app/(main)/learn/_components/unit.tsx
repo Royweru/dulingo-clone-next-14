@@ -16,6 +16,7 @@ interface UnitProps {
   activeLessonPercentage: number;
 }
 export const Unit = ({
+  id,
   title,
   description,
   order,
