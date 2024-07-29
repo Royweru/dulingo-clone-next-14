@@ -9,20 +9,15 @@ import {
   DialogHeader,
   DialogFooter,
   DialogTitle,
-  DialogTrigger,
 } from "../ui/dialog";
-import { useRouter } from "next/navigation";
-import { useHeartModal } from "@/store/use-hearts-modal";
-import Image from "next/image";
 
-export const HeartsModal = () => {
-  const router = useRouter();
+import Image from "next/image";
+import { usePracticeModal } from "@/store/use-practice-modal";
+
+export const PracticeModal = () => {
   const [isClient, setIsClient] = useState(false);
-  const { isOpen, close } = useHeartModal();
-  const onClick = () => {
-    close();
-    router.push("/store");
-  };
+  const { isOpen, close } = usePracticeModal();
+
   useEffect(() => setIsClient(true), []);
 
   if (!isClient) return null;
@@ -32,18 +27,14 @@ export const HeartsModal = () => {
       <DialogContent>
         <DialogHeader>
           <div className=" flex items-center w-full justify-center mb-5">
-            <Image
-              src={"/mascot_bad.jpeg "}
-              alt="Masscot"
-              height={80}
-              width={80}
-            />
+            <Image src={"/heart.png"} alt="Heart" height={100} width={100} />
           </div>
           <DialogTitle className=" text-center font-bold text-2xl">
-            You ran out of hearts!
+            Practice lesson
           </DialogTitle>
           <DialogDescription className=" text-center">
-            Get pro unlimited hearts, or purchase them in store.
+            Use practice lessons to regain hearts and points. You cannot loose
+            hearts or points in practice lessons.
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className=" mb-4">
@@ -52,17 +43,9 @@ export const HeartsModal = () => {
               variant={"primary"}
               size={"lg"}
               className=" w-full"
-              onClick={onClick}
-            >
-              Get unlimited hearts
-            </Button>
-            <Button
-              variant={"primaryOutline"}
-              size={"lg"}
-              className=" w-full"
               onClick={close}
             >
-              No thanks
+              I understand
             </Button>
           </div>
         </DialogFooter>
