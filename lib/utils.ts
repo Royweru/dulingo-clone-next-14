@@ -16,3 +16,7 @@ export const lemonSqueezyApiInstance = axios.create({
     Authorization: `Bearer ${process.env.LEMON_SQUEEZY_API_KEY}`,
   },
 });
+
+export function absoluteUrl(path: string) {
+  return `${process.env.NEXT_PUBLIC_APP_URL}`;
+}

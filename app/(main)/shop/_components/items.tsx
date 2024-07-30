@@ -25,6 +25,10 @@ export const Items = ({
       refillHearts().catch(() => toast.error("Something went wrong"));
     });
   };
+
+  const onUpgrade = () => {
+    startTransition(() => {});
+  };
   return (
     <ul className=" w-full">
       <div className=" flex items-center w-full p-4 gap-x-4 border-t-2">
@@ -43,6 +47,17 @@ export const Items = ({
               <p>{POINTS_TO_REFILL}</p>
             </div>
           )}
+        </Button>
+      </div>
+      <div className=" flex items-center w-full p-4 pt-8 border-t-2 gap-x-4">
+        <Image src={"/unlimited.png"} alt="" width={60} height={60} />
+        <div className=" flex-1">
+          <p className="text-neutral-700 text-base lg:text-xl">
+            Unlimited hearts
+          </p>
+        </div>
+        <Button onClick={onUpgrade} disabled={pending || hasActiveSubscription}>
+          {hasActiveSubscription ? "active" : "upgrade"}
         </Button>
       </div>
     </ul>
