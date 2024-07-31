@@ -13,6 +13,8 @@ import {
 import { redirect } from "next/navigation";
 import { Unit } from "./_components/unit";
 import { lessons, units as unitsSchema } from "@/db/schema";
+import { Promo } from "./_components/promo";
+import { Quests } from "./_components/quests";
 const LearnPage = async () => {
   const userProgressData = getUserProgress();
   const unitsData = getUnits();
@@ -33,7 +35,7 @@ const LearnPage = async () => {
     lessonsPercentageData,
     userSubscriptionData,
   ]);
-
+  const isPro = !!userSubscription?.isActive;
   if (!userProgress || !userProgress.activeCourse) {
     redirect("/courses");
   }
@@ -68,8 +70,11 @@ const LearnPage = async () => {
           activeCourse={userProgress.activeCourse}
           hearts={userProgress.hearts}
           points={userProgress.points}
-          hasActiveSubscription={!!userSubscription?.isActive}
+          hasActiveSubscription={isPro}
         />
+
+        {!isPro && <Promo />}
+        <Quests points={userProgress.points} />
       </StickyWrapper>
     </div>
   );

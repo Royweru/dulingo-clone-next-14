@@ -1,5 +1,5 @@
 import { getCourses, getUserProgress } from "@/db/queries";
-import { List } from "../_components/list";
+import { List } from "./_components/list";
 import React from "react";
 import { userProgress } from "@/db/schema";
 
