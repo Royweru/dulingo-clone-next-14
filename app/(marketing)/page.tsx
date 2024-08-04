@@ -19,7 +19,7 @@ const MarketingPage = () => {
      p-4 gap-2"
     >
       <div className=" relative w-[240px] h-[240px] lg:w-[424px] lg:h-[424px] mb-8 lg:mb-0">
-        <Image fill src={"/hero.png"} alt="" />
+        <Image fill src={"/hero.svg"} alt="" />
       </div>
       <div className=" flex flex-col items-center gap-y-8">
         <h1
