@@ -8,27 +8,27 @@ export const Footer = () => {
       <div className=" lg:max-w-screen-lg mx-auto flex items-center justify-evenly h-full">
         <Button size={"lg"} variant={"ghost"} className=" w-full">
           <Image
-            src={"/KE.svg"}
-            alt="Kenyan"
+            src={"/es.svg"}
+            alt="Espanyol"
             height={32}
             width={40}
             className=" mr-4 rounded-md"
           />
-          Kenian
+          Spanyol
         </Button>
         <Button size={"lg"} variant={"ghost"} className=" w-full">
           <Image
-            src={"/cm.svg"}
+            src={"/fr.svg"}
             alt="cameroon"
             height={32}
             width={40}
             className=" mr-4 rounded-md"
           />
-          Cameroon
+          French
         </Button>
         <Button size={"lg"} variant={"ghost"} className=" w-full">
           <Image
-            src={"/JP.svg"}
+            src={"/jp.svg"}
             alt="japanese"
             height={32}
             width={40}
@@ -38,7 +38,7 @@ export const Footer = () => {
         </Button>
         <Button size={"lg"} variant={"ghost"} className=" w-full">
           <Image
-            src={"/IT.svg"}
+            src={"/it.svg"}
             alt="Itlian"
             height={32}
             width={40}
@@ -48,13 +48,13 @@ export const Footer = () => {
         </Button>
         <Button size={"lg"} variant={"ghost"} className=" w-full">
           <Image
-            src={"/ENG.svg"}
+            src={"/hr.svg"}
             alt="english"
             height={32}
             width={40}
             className=" mr-4 rounded-md"
           />
-          English
+          Colombia
         </Button>
       </div>
     </footer>

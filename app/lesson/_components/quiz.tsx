@@ -157,14 +157,14 @@ export const Quiz = ({
         "
         >
           <Image
-            src={"/finish.jpeg"}
+            src={"/finish.svg"}
             alt="finished"
             className=" hidden lg:block"
             height={100}
             width={100}
           />
           <Image
-            src={"/finish.jpeg"}
+            src={"/finish.svg"}
             alt="finished"
             className=" block lg:hidden"
             height={50}

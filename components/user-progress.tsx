@@ -3,9 +3,9 @@ import React from "react";
 import { Button } from "./ui/button";
 import Image from "next/image";
 import { InfinityIcon } from "lucide-react";
-import { Courses, userProgress } from "@/db/schema";
+import { courses, userProgress } from "@/db/schema";
 interface UserProgressProps {
-  activeCourse: typeof Courses.$inferInsert;
+  activeCourse: typeof courses.$inferInsert;
   hearts: typeof userProgress.$inferSelect.hearts;
   points: typeof userProgress.$inferSelect.points;
   hasActiveSubscription: boolean;
@@ -32,7 +32,7 @@ export const UserProgress = ({
       <Link href={"/shop"}>
         <Button variant={"ghost"} className=" text-orange-500">
           <Image
-            src={"/points.png"}
+            src={"/points.svg"}
             alt="points"
             width={28}
             height={28}
@@ -44,7 +44,7 @@ export const UserProgress = ({
       <Link href={"/shop"}>
         <Button variant={"ghost"} className=" text-rose-500">
           <Image
-            src={"/heart.png"}
+            src={"/heart.svg"}
             alt="heart"
             height={22}
             width={22}

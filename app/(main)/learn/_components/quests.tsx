@@ -28,7 +28,7 @@ export const Quests = ({ points }: props) => {
               key={quest.title}
               className=" flex items-center w-full p-4 border-t-2 gap-x-4"
             >
-              <Image src={"/points.png"} alt="points" width={40} height={40} />
+              <Image src={"/points.svg"} alt="points" width={40} height={40} />
               <div className=" flex flex-col gap-y-2 w-full">
                 <p className=" text-neutral-700  text-sm font-bold">
                   {quest.title}
